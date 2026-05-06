@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+    <title>Flow.Daily · To-Do List Interativa</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700&family=Space+Grotesk:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="./estilo/style.css">
+</head>
+<body>
+<div class="glass-container">
+    <div class="top-bar">
+        <div class="title-section">
+            <h1><i class="fa-regular fa-calendar-check"></i> Flow.Daily</h1>
+            <p>Gerencie hábitos, tarefas diárias e mantenha o foco ✨</p>
+        </div>
+        <div class="color-menu" id="colorMenu">
+            <span><i class="fa-solid fa-palette"></i> Tema</span>
+            <div class="color-option" data-color="default" style="background: #7c3aed;"></div>
+            <div class="color-option" data-color="vida" style="background: #10b981;"></div>
+            <div class="color-option" data-color="energia" style="background: #f59e0b;"></div>
+            <div class="color-option" data-color="calma" style="background: #06b6d4;"></div>
+            <div class="color-option" data-color="romance" style="background: #ec489a;"></div>
+        </div>
+    </div>
+
+    <!-- atalhos rápidos: beber água, atividade física, etc -->
+    <div class="quick-actions">
+        <div class="quick-buttons" id="quickButtons">
+            <button class="quick-btn" data-task="💧 Tomar água (2L)" data-priority="alta"><i class="fa-solid fa-droplet"></i> Tomar água</button>
+            <button class="quick-btn" data-task="🏃‍♀️ Atividade física 30min" data-priority="alta"><i class="fa-solid fa-person-walking"></i> Atividade física</button>
+            <button class="quick-btn" data-task="📚 Ler 20 páginas" data-priority="media"><i class="fa-solid fa-book-open"></i> Ler livro</button>
+            <button class="quick-btn" data-task="🧘 Meditar 10min" data-priority="baixa"><i class="fa-solid fa-spa"></i> Meditar</button>
+            <button class="quick-btn" data-task="🥗 Refeição saudável" data-priority="media"><i class="fa-solid fa-apple-alt"></i> Alimentação</button>
+        </div>
+    </div>
+
+    <!-- formulário nova tarefa -->
+    <div class="task-form">
+        <div class="task-input-group">
+            <label>📝 Nova tarefa</label>
+            <input type="text" id="newTaskText" placeholder="Ex: Estudar React, Caminhar 20min, Beber água...">
+        </div>
+        <div class="priority-selector">
+            <label>⚡ Prioridade</label>
+            <select id="taskPriority">
+                <option value="baixa">Baixa</option>
+                <option value="media" selected>Média</option>
+                <option value="alta">Alta</option>
+            </select>
+        </div>
+        <button class="btn-add-task" id="addTaskBtn"><i class="fa-solid fa-plus"></i> Adicionar</button>
+    </div>
+
+    <!-- filtros -->
+    <div class="filters" id="filterContainer">
+        <div class="filter-chip active" data-filter="all">Todas</div>
+        <div class="filter-chip" data-filter="pendentes">Pendentes</div>
+        <div class="filter-chip" data-filter="concluidas">Concluídas</div>
+    </div>
+
+    <!-- lista de tarefas -->
+    <div class="tasks-wrapper">
+        <div id="tasksList"></div>
+    </div>
+    <footer><i class="fa-regular fa-moon"></i> Clique na cor do menu e personalize | Toque na tarefa para editar</footer>
+</div>
+<script src="./coddy/script.js"></script>
+</body>
+</html>
